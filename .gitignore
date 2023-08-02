@@ -1,0 +1,9 @@
+# directories to ingore
+
+__pycache__/
+tests.pytest_cache/
+
+# files to ignre
+
+*.log
+*.py[cod]
