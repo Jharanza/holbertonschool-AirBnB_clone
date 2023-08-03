@@ -10,7 +10,7 @@ All file will are written in Python programming language
 ### Usage
 The HBNB console wil have the interactive and non-interactive mode
 
-##Console Commands
+###Console Commands
 Command	Description
 all Prints all string representation of all instances based or not on the class name
 help Display help page
@@ -21,6 +21,10 @@ create <class> Creates a new instance of a given class with a unique ID and save
 destroy <class> <id> Deletes an instance based on the class name and id and saves it to a JSON file
 show <class> <id> Prints the string representation of a class instance based on the class name and ID
 
+### File Descriptions
+- *models* directory:
+  - **base_model.py:** Class *BaseModel* which all other classes inherit from. Attributes: *id, created_at, updated_at*.
+  - **city.py:** Class *City*. Attributes: *state_id, name*.
 ## Unit Testing
 Unit test are stored in the *tests* directory. To run unit test, run the following command:
 """
