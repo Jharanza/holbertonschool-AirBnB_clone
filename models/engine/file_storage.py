@@ -28,9 +28,9 @@ class FileStorage:
     def save(self):
         ''' method that seialize the object '''
         data = {}
-        for k, v in self_obj.items()
-            data[k] = v.to_dict()
-        with open(self.__file_path, 'w') as f:
+        for key, value in self_obj.items()
+            data[key] = value.to_dict()
+        with open(self.__file_path, 'w') as file:
             json.dump(data, file)
 
     def reload(self):
@@ -40,9 +40,9 @@ class FileStorage:
             "BaseModel": BaseModel,
         }
         try:
-            with open(self.__file_path, 'r') as f:
-                data_dict = json.load(f)
-                for k, v in data_dict.items():
-                    self.__objects[k] = classes["__class__"]](**v)
-        except FileNotFoundError:
+            with open(self.__file_path, 'r') as file:
+                data_dict = json.load(file)
+                for key, value in data_dict.items():
+                    self.__objects[key] = classes[value["__class__"]](**value)
+        except FileNotFoun  Error:
             pass
