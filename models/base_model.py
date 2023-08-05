@@ -29,7 +29,7 @@ class BaseModel:
 
     def save(self):
         """Updates the atribute 'updated_at' with the current datetime"""
-        self.updated_at = datetime.now
+        self.updated_at = datetime
 
     def to_dict(self):
         """Return a dictionary containing all keys/values of the instance"""
