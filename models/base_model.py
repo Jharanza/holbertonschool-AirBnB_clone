@@ -18,10 +18,10 @@ class BaseModel:
                     setattr(self, key, dttime_ob)
                 elif key != "__class__":
                     setattr(self, key, value)
-                else:
-                    self.id = str(uuid4())
-                    self.created_at = datetime.now()
-                    self.updated_at = datetime.now()
+        else:
+            self.id = str(uuid4())
+            self.created_at = datetime.now()
+            self.updated_at = datetime.now()
 
     def __str__(self):
         """Return string representation of the BaseModel class"""
@@ -36,7 +36,7 @@ class BaseModel:
         dic = {}
         dic["__class__"] = self.__class__.__name__
         for k, v in self.__dict__.items():
-            if isinstance(v, datetime.now()):
+            if isinstance(v, datetime):
                 dic[k] = v.isoformat()
             else:
                 dic[k] = v
