@@ -12,7 +12,7 @@ class FileStorage:
 
     def all(self):
         ''' return the object like a dictionary '''
-        return fileStorage.__objects
+        return FileStorage.__objects
 
     def new(self, obj):
         '''
@@ -27,13 +27,13 @@ class FileStorage:
         ''' method that seialize the object '''
         file_obj = FileStorage.__objects
         serial_obj = {key: obj.to_dict() for key, obj in file_obj.items()}
-        with open(FileStorage.__file.path, 'w') as file:
+        with open(FileStorage.__file_path, 'w') as file:
             json.dump(serial_obj, file)
 
     def reload(self):
         ''' method that deserialize the object '''
         try:
-            with open(FileStorage._file.path, 'r') as file:
+            with open(FileStorage._file_path, 'r') as file:
                 data = json.load(file)
                 from models.base_model import BaseModel
 
