@@ -10,7 +10,7 @@ from models.user import User
 class HBNBCommand(cmd.Cmd):
     """Interpreter class from cmd"""
     prompt = '(hbnb) '
-    classes_list = ["BaseModel"]
+    classes_list = ["BaseModel", "User"]
     int_attrs = ["attribute1", "attribute2"]
     float_attrs = ["attribute3", "attribute4"]
     def do_EOF(self, line):
