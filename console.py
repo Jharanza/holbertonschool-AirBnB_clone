@@ -105,6 +105,7 @@ class HBNBCommand(cmd.Cmd):
                 storage.__objects = all_objs
                 storage.save()
                 return
+            print("** no instance found **")
 
     def do_all(self, line):
         """Prints, as a list of strings, or all instances of a certain
