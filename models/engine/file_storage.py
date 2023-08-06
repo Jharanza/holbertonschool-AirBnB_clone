@@ -31,7 +31,7 @@ class FileStorage:
     def reload(self):
         """Deserializes the JSON file to __objects"""
         classes = {
-                "BaseModel": BaseMode,
+                "BaseModel": BaseModel,
                 "User": User
         }
         try:
