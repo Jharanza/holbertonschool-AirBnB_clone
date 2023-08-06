@@ -161,7 +161,7 @@ class HBNBCommand(cmd.Cmd):
                 instance_found = value
 
         if not instance_found:
-            print("** no instance found **")
+            print("** no instance found **")
             return
 
         if len(args) < 3:
