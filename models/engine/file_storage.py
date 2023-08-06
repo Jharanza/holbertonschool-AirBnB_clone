@@ -30,7 +30,10 @@ class FileStorage:
 
     def reload(self):
         """Deserializes the JSON file to __objects"""
-        classes = {"BaseModel": BaseModel}
+        classes = {
+                "BaseModel": BaseMode,
+                "User": User
+        }
         try:
             with open(self.__file_path, 'r') as f:
                 data = f.read()
