@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 ''' module place that inherits from BseModel'''
+from models.base_model import BaseModel
 
 
 class Place(BaseModel):
