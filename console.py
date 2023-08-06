@@ -92,7 +92,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         if len(args) < 2:
-            print("** instead of **")
+            print("** no instance found **")
             return
 
         obj_key = args[0] + "." + args[1]
