@@ -11,6 +11,8 @@ class HBNBCommand(cmd.Cmd):
     """Interpreter class from cmd"""
     prompt = '(hbnb) '
     classes_list = ["BaseModel"]
+    int_attrs = ["attribute1", "attribute2"]
+    float_attrs = ["attribute3", "attribute4"]
 
     def do_EOF(self, line):
         """Quits the console when Ctrl D entered"""
@@ -90,7 +92,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         if len(args) < 2:
-            print("** instance id missing **")
+            print("** no instance found **")
             return
 
         obj_key = args[0] + "." + args[1]
