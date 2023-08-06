@@ -32,7 +32,7 @@ class HBNBCommand(cmd.Cmd):
         print("\n")
         print("Documented commands (type help <topic>):")
         print("========================================")
-        print("EOF  help  quit create show destroy all update")
+        print("Quit command to exit the program")
         print("\n")
 
     def do_create(self, line):
@@ -92,7 +92,7 @@ class HBNBCommand(cmd.Cmd):
             return
 
         if len(args) < 2:
-            print("** no instance found **")
+            print("** instance id missing **")
             return
 
         obj_key = args[0] + "." + args[1]
