@@ -6,6 +6,7 @@ from uuid import uuid4
 from datetime import datetime
 import models
 
+
 class BaseModel:
     """The Base class"""
     def __init__(self, *args, **kwargs):
@@ -14,7 +15,7 @@ class BaseModel:
             for key, value in kwargs.items():
                 if key == "created_at" or key == "updated_at":
                     dttime_ob = datetime.strptime(value,
-                                                    '%Y-%m-%dT%H:%M:%S.%f')
+                                                  '%Y-%m-%dT%H:%M:%S.%f')
                     setattr(self, key, dttime_ob)
                 elif key != "__class__":
                     setattr(self, key, value)
@@ -22,6 +23,7 @@ class BaseModel:
             self.id = str(uuid4())
             self.created_at = datetime.now()
             self.updated_at = datetime.now()
+            models.storage.new(self)
 
     def __str__(self):
         """Return string representation of the BaseModel class"""
@@ -30,14 +32,12 @@ class BaseModel:
     def save(self):
         """Updates the atribute 'updated_at' with the current datetime"""
         self.updated_at = datetime.now()
+        models.storage.save()
 
     def to_dict(self):
         """Return a dictionary containing all keys/values of the instance"""
-        dic = {}
+        dic = dict(self.__dict__)
         dic["__class__"] = self.__class__.__name__
-        for k, v in self.__dict__.items():
-            if isinstance(v, datetime):
-                dic[k] = v.isoformat()
-            else:
-                dic[k] = v
+        dic["created_at"] = self.created_at.isoformat()
+        dic["updated_at"] = self.updated_at.isoformat()
         return dic

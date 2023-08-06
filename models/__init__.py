@@ -1,5 +1,7 @@
+#!/usr/bin/python3
+"""The init file for the models dir"""
 from models.engine.file_storage import FileStorage
 
-storage = FileStorage() # Creating the instance
+storage = FileStorage()
 
-storage.reload() # Call the reload() method
+storage.reload()

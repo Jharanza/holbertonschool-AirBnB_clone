@@ -1,8 +1,7 @@
 #!/usr/bin/python3
-'''
-    module file_storage that serialize and deserialize files
-'''
+"""module Filestorage that serialize and deserialize files"""
 import json
+import os
 from models.base_model import BaseModel
 
 
@@ -12,37 +11,31 @@ class FileStorage:
     __objects = {}
 
     def all(self):
-        ''' return the object like a dictionary '''
+        """Returns the dictionary __objects"""
         return self.__objects
 
     def new(self, obj):
-        '''
-            method that sets the object with a key
-            Args:
-                obj: object to set
-        '''
+        """Sets in __objects the obj with key"""
         if obj:
             key = '{}.{}'.format(obj.__class__.__name__, obj.id)
             self.__objects[key] = obj
 
     def save(self):
-        ''' method that seialize the object '''
+        """Serializes __objects to the JSON file"""
         data = {}
-        for key, value in self_obj.items()
-            data[key] = value.to_dict()
-        with open(self.__file_path, 'w') as file:
-            json.dump(data, file)
+        for k, v in self.__objects.items():
+            data[k] = v.to_dict()
+        with open(self.__file_path, 'w') as f:
+            json.dump(data, f)
 
     def reload(self):
-        ''' method that deserialize the object '''
-        data_dict = {}
-        classes = {
-            "BaseModel": BaseModel,
-        }
+        """Deserializes the JSON file to __objects"""
+        classes = {"BaseModel": BaseModel}
         try:
-            with open(self.__file_path, 'r') as file:
-                data_dict = json.load(file)
-                for key, value in data_dict.items():
-                    self.__objects[key] = classes[value["__class__"]](**value)
-        except FileNotFoun  Error:
+            with open(self.__file_path, 'r') as f:
+                data = f.read()
+                data = json.loads(data)
+                for k, v in data.items():
+                    self.__objects[k] = classes[v["__class__"]](**v)
+        except FileNotFoundError:
             pass
