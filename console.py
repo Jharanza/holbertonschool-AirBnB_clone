@@ -32,7 +32,7 @@ class HBNBCommand(cmd.Cmd):
         print("\n")
         print("Documented commands (type help <topic>):")
         print("========================================")
-        print("Quit command to exit the program")
+        print("EOF  help  quit create show destroy all update")
         print("\n")
 
     def do_create(self, line):
