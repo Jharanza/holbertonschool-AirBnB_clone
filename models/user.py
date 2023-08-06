@@ -5,7 +5,7 @@ from models.base_model import BaseModel
 
 class User(BaseModel):
     ''' class User with public attributes inherits from BaseModel'''
-    def __init__(self, *args, **kvargs):
+    def __init__(self, *args, **kwargs):
         ''' Call the emthod super '''
         super().__init__(*args, **kwargs)
         self.email = ''
