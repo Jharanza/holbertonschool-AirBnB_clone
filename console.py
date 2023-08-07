@@ -14,9 +14,12 @@ from models.state import State
 class HBNBCommand(cmd.Cmd):
     """Interpreter class from cmd"""
     prompt = '(hbnb) '
-    classes_list = ["BaseModel", "User"]
+    completekey = None
+    classes_list = ["BaseModel", "User", "State", "City",
+                    "Amenity", "Place", "Review"]
     int_attrs = ["attribute1", "attribute2"]
     float_attrs = ["attribute3", "attribute4"]
+
     def do_EOF(self, line):
         """Quits the console when Ctrl D entered"""
         print()
