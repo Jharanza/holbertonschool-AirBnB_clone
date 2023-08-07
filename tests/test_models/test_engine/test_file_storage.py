@@ -5,10 +5,10 @@ from models.engine.file_storage import FileStorage
 import unittest
 
 
-class testFileStorage(unittest.TestCases):
+class TestFileStorage(unittest.TestCases):
     """file_path attribute test"""
     def test_file_path_is_none(self):
-        file_path = fileStorage.__file_path
+        file_path = FileStorage.__file_path
         self.assertIsNotNone(file_path, '__file_path is none')
 
     def test_file_path_attribute(self):
