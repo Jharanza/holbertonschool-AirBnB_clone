@@ -1,8 +1,7 @@
 # HBNB - an AirBnB clone
 
 ## Description
-
-The first step ....
+In this project we create an interactive console with which we can manipulate and instantiate objects by manipulating, serializing and deserializing them, we also create an abstract storage engine and create files to test and validate the created classes
 
 ### Coding Style
 All file will are written in Python programming language
@@ -25,6 +24,7 @@ show <class> <id> Prints the string representation of a class instance based on 
 - *models* directory:
   - **base_model.py:** Class *BaseModel* which all other classes inherit from. Attributes: *id, created_at, updated_at*.
   - **city.py:** Class *City*. Attributes: *state_id, name*.
+
 ## Unit Testing
 Unit test are stored in the *tests* directory. To run unit test, run the following command:
 """
@@ -34,3 +34,5 @@ python3 -m unittest discover tests
 ## Authors
 - Jhonny Arana [[Jharanza](https://github.com/Jharanza)]
 - Miguel Bautista [[MiguelBG12](https://github.com/MiguelBG12)]
+
+
