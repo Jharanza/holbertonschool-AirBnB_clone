@@ -46,7 +46,7 @@ class TestFileStorageDocs(unittest.TestCase):
         """Tests for docstrings in all functions"""
         for func in self.city_funcs:
             self.assertTrue(len(func[1].__doc__) >= 1)
-    
+
 
 class TestState(unittest.TestCase):
 
