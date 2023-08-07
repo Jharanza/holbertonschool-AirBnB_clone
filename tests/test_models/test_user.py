@@ -4,6 +4,7 @@ import unittest
 from models.user import User
 from datetime import datetime
 
+
 class TestUser(unittest.TestCase):
     """Instantiation of User"""
 
@@ -86,7 +87,7 @@ class TestUser(unittest.TestCase):
         """Pass to_dict method"""
         user1 = User()
         self.assertTrue(dict, type(user1.to_dict))
-    
+
     def test_to_dict_add_attr(self):
         """Add attribute to dict"""
         user1 = User()
@@ -95,11 +96,11 @@ class TestUser(unittest.TestCase):
         self.assertIn("age", user1.to_dict())
         self.assertIn("state", user1.to_dict())
 
-     def test_to_dict_wrong_arg(self):
+    def test_to_dict_wrong_arg(self):
         """Add an undefined arg"""
         user1 = User()
         with self.assertRaises(NameError):
-        user1.to_dict(hello)
+            user1.to_dict(hello)
 
 
 if __name__ == "__main__":
