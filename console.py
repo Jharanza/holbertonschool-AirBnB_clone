@@ -11,6 +11,7 @@ from models.review import Review
 from models.amenity import Amenity
 from models.state import State
 
+
 class HBNBCommand(cmd.Cmd):
     """Interpreter class from cmd"""
     prompt = '(hbnb) '
@@ -24,12 +25,15 @@ class HBNBCommand(cmd.Cmd):
         """Quits the console when Ctrl D entered"""
         print()
         return True
+
     def do_quit(self, line):
         """Quit command to exit the program"""
         return True
+
     def emptyline(self):
         """Overrides parent empty line method"""
         pass
+
     def do_help(self, line):
         """Display help information for commands"""
         print("\n")
@@ -51,6 +55,7 @@ class HBNBCommand(cmd.Cmd):
         new_obj = globals()[args[0]]()
         new_obj.save()
         print(new_obj.id)
+
     def do_show(self, line):
         """Prints the string repr of an instance based
         on class name and id"""
@@ -72,6 +77,7 @@ class HBNBCommand(cmd.Cmd):
                 print(value)
                 return
         print("** no instance found **")
+
     def do_destroy(self, line):
         """Deletes an instance of a class based on class name and id"""
         if not line:
@@ -96,6 +102,7 @@ class HBNBCommand(cmd.Cmd):
                 storage.save()
                 return
         print("** no instance found **")
+
     def do_all(self, line):
         """Prints, as a list of strings, or all instances of a certain
         class, if provided"""
@@ -119,6 +126,7 @@ class HBNBCommand(cmd.Cmd):
                     print(objs_list)
                 else:
                     print("** class doesn't exist **")
+
     def do_update(self, line):
         """Updates or adds an attribute to an instance of a class
         instance is identified by class name and id
@@ -155,6 +163,7 @@ class HBNBCommand(cmd.Cmd):
             setattr(instance_found, args[2], float(args[3]))
         else:
             setattr(instance_found, args[2], args[3])
+
         instance_found.save()
 if __name__ == '__main__':
     HBNBCommand().cmdloop()
