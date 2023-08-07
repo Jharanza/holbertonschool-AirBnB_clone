@@ -2,6 +2,7 @@
 """Unit tests for class Place"""
 import unittest
 from models.place import Place
+from models.base_model import BaseModel
 from datetime import datetime
 
 
