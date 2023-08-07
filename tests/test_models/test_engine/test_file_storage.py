@@ -5,7 +5,7 @@ from models.engine.file_storage import FileStorage
 import unittest
 
 
-class TestFileStorage(unittest.TestCases):
+class TestFileStorage(unittest.TestCase):
     """file_path attribute test"""
     def test_file_path_is_none(self):
         file_path = FileStorage.__file_path
