@@ -21,9 +21,6 @@
     border: 2px solid brown;
 }
 
-
-
-
 article ul li {
     list-style: none;
     width: 390px;
@@ -31,5 +28,13 @@ article ul li {
     margin: 20px;
     border: 1px solid #FF5A5F;
     display: block;
+}
+
+.new_places {
+    background-color: #174c0b;
+    align-items: center;
+    justify-content: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
